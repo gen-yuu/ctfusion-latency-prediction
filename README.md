@@ -34,7 +34,7 @@ For those who want to quickly view and verify the main results of our paper, we 
     ```
 3.  **Navigate to and open the evaluation notebook:**
 
-    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gen-yuu/ctfusion-latencyprediction/main/notebooks/stgc_evalatoin_all.ipynb)
+    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gen-yuu/ctfusion-latencyprediction/blob/master/notebooks/stgc_evalatoin_all.ipynb)
 
     **[➡️ Open `notebooks/stgc_evalatoin_all.ipynb`](./notebooks/stgc_evalatoin_all.ipynb)**
 
