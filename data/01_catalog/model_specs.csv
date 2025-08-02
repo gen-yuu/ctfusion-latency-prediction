@@ -1,0 +1,7 @@
+model_id,architecture_category,model_name,model_memory_mb,model_input_dtype_bytes,num_attention,num_batchnorm2d,num_conv2d,num_gelu,num_layernorm,num_linear,num_relu,num_silu
+model_01,Transformer,detr,157.808349609375,4,18,0,54,0,31,96,61,0
+model_02,CNN,faster_rcnn,166.74910736083984,4,0,65,69,0,0,3,24,0
+model_03,Transformer,rt_detr,163.6175994873047,4,0,42,97,0,21,97,57,24
+model_04,CNN,ssd300,135.96277618408203,4,0,0,35,0,0,0,23,0
+model_05,ViT,yolos,24.7525634765625,4,12,0,1,0,25,78,0,0
+model_06,Unknown,yolov8s,42.5970458984375,4,0,57,64,0,0,0,0,1

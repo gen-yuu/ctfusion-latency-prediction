@@ -1,0 +1,22 @@
+{
+    "features": [
+        "device_virtual_cnn_block_latency_fp32",
+        "device_virtual_cnn_block_latency_fp16",
+        "device_virtual_transformer_block_latency_fp32",
+        "device_virtual_transformer_block_latency_fp16",
+        "model_flops_g",
+        "model_memory_mb",
+        "num_attention",
+        "num_batchnorm2d",
+        "num_conv2d",
+        "num_gelu",
+        "num_layernorm",
+        "num_linear",
+        "num_relu",
+        "num_silu",
+        "batch_size",
+        "total_frames",
+        "im_height",
+        "im_width"
+    ]
+}

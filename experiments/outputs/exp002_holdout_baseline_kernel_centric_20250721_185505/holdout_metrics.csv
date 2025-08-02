@@ -1,0 +1,6 @@
+fold,val_groups,val_mape
+1,['intel_xeon_gold_6330__nvidia_a100_pcie_40gb'],0.4365023145759336
+2,['intel_core_i5_13th_gen__nvidia_geforce_rtx_4070'],0.2175946976104178
+3,['intel_core_i7_13th_gen__nvidia_geforce_rtx_4070'],0.2207616765986666
+4,['intel_core_i7_9th_gen__nvidia_geforce_rtx_4070'],0.24834913090017885
+5,['intel_xeon_gold_5122__nvidia_geforce_rtx_4070'],0.31357617046307346

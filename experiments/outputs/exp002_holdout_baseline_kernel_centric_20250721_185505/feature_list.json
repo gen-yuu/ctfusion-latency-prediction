@@ -1,0 +1,5 @@
+{
+    "features": [
+        "gpu_compute_time_ms"
+    ]
+}

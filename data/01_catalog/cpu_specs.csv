@@ -1,0 +1,6 @@
+cpu_key,cores_total,threads,base_ghz,max_boost_ghz,fp32_gflops,l3_cache_mb,mem_channels,peak_mem_bw_gbps,pcie_gen,pcie_lanes,pcie_bw_gbps,release
+intel_core_i7_13th_gen,16,24,3.4,5.4,960,30,2,89.6,5,16,63,2022
+intel_core_i5_13th_gen,14,20,2.5,4.8,710,24,2,89.6,5,16,63,2023
+intel_core_i7_9th_gen,8,8,3.6,4.9,627,12,2,42.7,3,16,15.8,2018
+intel_xeon_gold_6330,28,56,2,3.8,3405,42,8,204.8,4,64,31.5,2021
+intel_xeon_gold_5122,4,8,3.6,3.7,473,16.5,6,128,3,48,15.8,2017

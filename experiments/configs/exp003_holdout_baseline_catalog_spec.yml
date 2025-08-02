@@ -1,0 +1,94 @@
+description: "ハードウェアの理論値による推論の基本性能を新しいGPUをテストデータとして評価する"
+
+# --- データ関連の設定 ---
+data:
+  # 使用する処理済みデータセットのパス
+  dataset_path: "data/02_processed/training_dataset.csv"
+  # ターゲット変数
+  target_col: "total_time_ms"
+
+# --- 特徴量関連の設定 ---
+features:
+  # Host性能の特徴量カラム
+  host_cols:
+    - "cores_total"
+    - "threads"
+    - "base_ghz"
+    - "max_boost_ghz"
+    - "fp32_gflops"
+    - "l3_cache_mb"
+    - "mem_channels"
+    - "peak_mem_bw_gbps"
+    - "pcie_gen"
+    - "pcie_lanes"
+    - "cpu_pcie_bw_gbps"
+
+  # Device性能の特徴量カラム
+  device_cols:
+    - "vram_gb"
+    - "gpu_mem_bw_gbps"
+    - "fp32_tflops_cuda"
+    - "fp16_tflops_cuda"
+    - "fp16_tflops_tensor"
+    - "gpu_pcie_bw_gbps"
+    - "l1_cache_kb"
+    - "l2_cache_mb"
+
+  # タスクの特徴量カラム
+  task_cols:
+    # モデルの要求量
+    - "model_flops_g"
+    - "model_memory_mb"
+    - "model_input_dtype_bytes"
+    - "num_attention"
+    - "num_batchnorm2d"
+    - "num_conv2d"
+    - "num_gelu"
+    - "num_layernorm"
+    - "num_linear"
+    - "num_relu"
+    - "num_silu"
+
+    # データの要求量
+    - "batch_size"
+    - "total_frames"
+    - "im_height"
+    - "im_width"
+
+# --- 検証方法の設定 ---
+validation:
+  strategy: "holdout"
+
+  # グループ分けに使うカラム
+  group_by_col: "system_id"
+
+  # テストセットとして固定するグループのリストを新設
+  test_groups:
+    - "intel_xeon_gold_6330__nvidia_a100_pcie_40gb"
+    - "intel_core_i5_13th_gen__nvidia_geforce_rtx_4070"
+    - "intel_core_i7_13th_gen__nvidia_geforce_rtx_4070"
+    - "intel_core_i7_9th_gen__nvidia_geforce_rtx_4070"
+    - "intel_xeon_gold_5122__nvidia_geforce_rtx_4070"
+
+# --- モデルの設定 ---
+model:
+  name: "lightgbm"
+  params:
+    objective: "regression_l1" # L1損失 (MAE)
+    metric: "mape" # 評価指標はMAPE
+    n_estimators: 100000
+    learning_rate: 0.05
+    seed: 42
+    n_jobs: -1
+    importance_type: "gain"
+    # device_type: "gpu"
+
+    num_leaves: 20 # 木の複雑さ
+    # feature_fraction: 0.7 # 特徴量をランダムにサンプリング
+    # bagging_fraction: 0.7 # データをランダムにサンプリング
+    # bagging_freq: 1 # bagging_fractionを有効にするため
+    # reg_alpha: 1.0 # L1正則化
+    # reg_lambda: 1.0 # L2正則化
+
+# --- Root出力先 ---
+output_dir: "experiments/outputs/"

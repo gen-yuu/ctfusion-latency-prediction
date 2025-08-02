@@ -1,0 +1,10 @@
+gpu_key,vram_gb,mem_bw_gbps,fp32_tflops_cuda,fp16_tflops_cuda,fp16_tflops_tensor,pcie_bw_gbps,l1_cache_kb,l2_cache_mb,gpu_generation ,release
+nvidia_a100_pcie_40gb,40,1556,19.49,77.97,311.84,31.5,192,40,Ampere,2020
+nvidia_geforce_rtx_4070,12,504.2,29.15,29.15,233,31.5,128,36,Ada,2023
+nvidia_geforce_rtx_3060_ti,8,448,16.2,16.2,64.8,31.5,128,4,Ampere,2020
+nvidia_geforce_rtx_3050,8,224,9.098,9.098,36.4,15.8,128,2,Ampere,2022
+nvidia_geforce_rtx_2080_ti,11,616,13.45,26.9,110,15.8,64,5.5,Turing,2018
+nvidia_geforce_rtx_2080,8,448,10.07,20.14,82.6,15.8,64,4,Turing,2018
+nvidia_titan_rtx,24,672,16.31,32.62,130.5,15.8,64,6,Turing,2018
+nvidia_geforce_gtx_1650,4,128.1,2.984,5.967,0,15.8,64,1,Turing,2019
+nvidia_geforce_gtx_1080,8,320.3,8.873,0.139,0,15.8,48,2,Pascal,2016
